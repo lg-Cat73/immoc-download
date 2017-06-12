@@ -1,8 +1,11 @@
-# immoc-download
+# imooc-download
 下载慕课网的视频
 
 ## 使用说明
 ```shell
-java -jar immoc-download.jar <mid>
+mvn clean assembly:assembly
+cd target
+
+java -jar imooc-download.jar <mid>
 ```
 

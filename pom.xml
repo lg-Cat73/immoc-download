@@ -2,15 +2,15 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.cat73</groupId>
-    <artifactId>immoc-download</artifactId>
+    <artifactId>imooc-download</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>immoc-download</name>
+    <name>imooc-download</name>
     <description>批量下载慕课网的视频的小工具</description>
     <dependencies>
         <dependency>
             <groupId>org.nutz</groupId>
             <artifactId>nutz</artifactId>
-            <version>1.r.60</version>
+            <version>1.r.61</version>
         </dependency>
     </dependencies>
     <build>
@@ -22,8 +22,31 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+	    </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.cat73.imooc.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assembly</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
-        <defaultGoal>compile</defaultGoal>
     </build>
 </project>

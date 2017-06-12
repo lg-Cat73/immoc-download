@@ -1,4 +1,4 @@
-package org.cat73.immoc;
+package org.cat73.imooc;
 
 import java.io.File;
 import java.io.FileOutputStream;
